@@ -8,9 +8,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class App extends  JFrame {
     private JComboBox comboBox1;
     private JPanel rootPanel;
+    private JComboBox comboBox2;
+
     //static JFrame frame;
 
     static String fileName = "SOB.LAS";
@@ -25,7 +28,7 @@ public class App extends  JFrame {
 //        setLayout(null);
 
         super("Wykresiki2");
-//
+
        String arr[] = {"SOB.LAS", "K.las","W.LAS"};
 
         comboBox1.addItem("SOB.LAS");
@@ -58,6 +61,21 @@ public class App extends  JFrame {
 
                 setReader();
 
+                for(String s : Reader.parameters )
+                {
+                    comboBox2.addItem(s);
+                }
+
+            }
+        });
+
+
+        comboBox2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                System.out.println("dupa");
+
             }
         });
     }
@@ -71,8 +89,8 @@ public class App extends  JFrame {
         reader.ReadFromFile(fileName);
 
 
-        for(String s : reader.parameters)
-            System.out.println(s);
+//        for(String s : reader.parameters)
+//            System.out.println(s);
     }
 
 }

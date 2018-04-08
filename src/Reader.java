@@ -6,9 +6,15 @@ import java.util.Scanner;
 
 public class Reader {
 
-    public ArrayList<String> parameters = new ArrayList<>();
-    public ArrayList<String> units = new ArrayList<>();
-    public ArrayList<Double> values = new ArrayList<>();
+    public static ArrayList<String> parameters;
+    public static ArrayList<String> units ;
+    public static ArrayList<Double> values;
+
+    public Reader() {
+        parameters = new ArrayList<>();
+        units=new ArrayList<>();
+        values=new ArrayList<>();
+    }
 
     public static boolean isNumeric(String s) {
         return s != null && s.matches("[-+]?\\d*\\.?\\d+");
